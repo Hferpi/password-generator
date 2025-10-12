@@ -4,12 +4,14 @@ import { db } from "@/lib/db";
 import { FormEditElement } from "@/components/Shared/FormEditElement";
 
 type PageProps = {
-  params: {
+  params: Promise<{
     elementId: string;
-  };
+  }>;
 };
 
 export default async function ElementPage({ params }: PageProps) {
+  const { elementId } = await params; 
+  
   const session = await getServerSession();
 
   if (!session || !session.user?.email) {
@@ -17,9 +19,7 @@ export default async function ElementPage({ params }: PageProps) {
   }
 
   const element = await db.element.findUnique({
-    where: {
-      id: params.elementId,
-    },
+    where: { id: elementId },
   });
 
   if (!element) {
