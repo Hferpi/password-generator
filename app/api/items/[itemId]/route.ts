@@ -1,29 +1,26 @@
 import { db } from "@/lib/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function PATCH(req: Request,
-     {params }: {params: {itemId: string}}
-    ) {
-  try{
-const {itemId} = params;
-const values = await req.json();
+export async function PATCH(
+  request: NextRequest,
+  context: { params: { itemId: string } }
+) {
+  try {
+    const { itemId } = context.params;
+    const values = await request.json();
 
-if(!itemId){
-    return new NextResponse("Unauthorized", {status: 401})
-}
-const element = await db.element.update({
-    where: {
-        id: itemId
-    },
-    data: {
-        ...values
+    if (!itemId) {
+      return new NextResponse("Unauthorized", { status: 401 });
     }
-  });
 
-  return NextResponse.json(element);
-  }catch(error){
-    console.log(error);
-    return new NextResponse("Internal Server Error", {status: 500})
+    const element = await db.element.update({
+      where: { id: itemId },
+      data: { ...values },
+    });
+
+    return NextResponse.json(element);
+  } catch (error) {
+    console.error("[PATCH /api/items/[itemId]]", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
   }
-    
 }

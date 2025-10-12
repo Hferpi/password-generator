@@ -1,21 +1,26 @@
 import { db } from "@/lib/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: Request) {
-    try{
-const {
-    name,
-    typeElement,
-    isFavourite,
-    urlWebsite,
-    username,
-    password,
-    notes,
-    directory,
-    userId
-} =await req.json()
-const element = await db.element.create({
-    data: {
+export async function POST(request: NextRequest) {
+  try {
+    const {
+      name,
+      typeElement,
+      isFavourite,
+      urlWebsite,
+      username,
+      password,
+      notes,
+      directory,
+      userId,
+    } = await request.json();
+
+    if (!userId) {
+      return NextResponse.json({ error: "Missing userId" }, { status: 400 });
+    }
+
+    const element = await db.element.create({
+      data: {
         name,
         typeElement,
         isFavourite,
@@ -24,13 +29,16 @@ const element = await db.element.create({
         password,
         notes,
         directory,
-        userId
-    }
-})
-return NextResponse.json(element)
+        userId,
+      },
+    });
 
-    }catch(error){
-        console.log(error)
-        return NextResponse.json({error: "Error al crear el elemento"}, {status: 500})
-    }
+    return NextResponse.json(element);
+  } catch (error) {
+    console.error("[POST /api/items]", error);
+    return NextResponse.json(
+      { error: "Error al crear el elemento" },
+      { status: 500 }
+    );
+  }
 }
