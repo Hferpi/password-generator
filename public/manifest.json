@@ -1,0 +1,27 @@
+{
+    "name": "Password Vault",
+    "short_name": "PassVault",
+    "theme_color": "#318FD6",
+    "background_color": "#318FD6",
+    "display": "standalone",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/images/icons/icon512_maskable-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/icons/icon512_maskable-256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/images/icons/icon512_maskable-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
