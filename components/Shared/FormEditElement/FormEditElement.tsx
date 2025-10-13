@@ -86,11 +86,9 @@ export function FormEditElement(props: FormEditElementProps) {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                     <SelectItem value="Social">Social</SelectItem>
-                                        <SelectItem value="Study">Study</SelectItem>
-                                        <SelectItem value="Entreteniment">Entreteniment</SelectItem>
-                                        <SelectItem value="Shopping">Shopping</SelectItem>
-                                        <SelectItem value="Work">Work</SelectItem>
+                                     <SelectItem value="Inicio de sesión">Inicio de sesión</SelectItem>
+                                        <SelectItem value="Tarjeta">Tarjeta de crédito</SelectItem>
+                                        <SelectItem value="Identidad">Identidad</SelectItem>
                                 </SelectContent>
                             </Select>
                             <FormMessage />
@@ -145,9 +143,11 @@ export function FormEditElement(props: FormEditElementProps) {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="Social">Social</SelectItem>
-                                    <SelectItem value="Arts">Arts</SelectItem>
-                                    <SelectItem value="Shoppig">Shoppig</SelectItem>
+                                      <SelectItem value="Social">Social</SelectItem>
+                                        <SelectItem value="Study">Study</SelectItem>
+                                        <SelectItem value="Entreteniment">Entreteniment</SelectItem>
+                                        <SelectItem value="Shopping">Shopping</SelectItem>
+                                        <SelectItem value="Work">Work</SelectItem>
                                 </SelectContent>
                             </Select>
                             <FormMessage />
