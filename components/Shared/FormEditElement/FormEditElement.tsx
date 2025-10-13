@@ -25,7 +25,7 @@ import axios from "axios"
 import { useRouter } from "next/navigation"
 import { FormEditElementProps } from "./FormEditeElements.types";
 import { formSchema } from "./FormEditElement.form"
-import { da } from "zod/v4/locales"
+
 
 export function FormEditElement(props: FormEditElementProps) {
     const { dataElement } = props;
@@ -86,9 +86,11 @@ export function FormEditElement(props: FormEditElementProps) {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="Inicio de sesión">Inicio de sesión</SelectItem>
-                                    <SelectItem value="Tarjeta">Tarjeta</SelectItem>
-                                    <SelectItem value="Identidad">Identidad</SelectItem>
+                                     <SelectItem value="Social">Social</SelectItem>
+                                        <SelectItem value="Study">Study</SelectItem>
+                                        <SelectItem value="Entreteniment">Entreteniment</SelectItem>
+                                        <SelectItem value="Shopping">Shopping</SelectItem>
+                                        <SelectItem value="Work">Work</SelectItem>
                                 </SelectContent>
                             </Select>
                             <FormMessage />

@@ -155,6 +155,7 @@ export function FormAddElement(props: FormAddElementProps) {
                                     </FormControl>
                                     <SelectContent>
                                         <SelectItem value="Social">Social</SelectItem>
+                                        <SelectItem value="Study">Study</SelectItem>
                                         <SelectItem value="Entreteniment">Entreteniment</SelectItem>
                                         <SelectItem value="Shopping">Shopping</SelectItem>
                                         <SelectItem value="Work">Work</SelectItem>

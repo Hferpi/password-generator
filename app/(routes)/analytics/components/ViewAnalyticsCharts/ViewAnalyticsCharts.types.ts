@@ -4,5 +4,6 @@ export type ViewAnalyticsChartsProps = {
     shopping: number;
     entreteniment: number;
     social: number;
+    study: number;
   };
   

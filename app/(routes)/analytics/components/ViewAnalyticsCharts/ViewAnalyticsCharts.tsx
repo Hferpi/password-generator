@@ -22,7 +22,7 @@ import { ViewAnalyticsChartsProps } from "./ViewAnalyticsCharts.types";
 
 
 export function ViewAnalyticsCharts(props: ViewAnalyticsChartsProps) {
-    const { creditCards, work, shopping, entreteniment, social } = props;
+    const { creditCards, work, shopping, entreteniment, social, study } = props;
   
     const chartConfig = {
       creditCards: { label: "Credit Cards", color: "var(--chart-1)" },
@@ -30,6 +30,7 @@ export function ViewAnalyticsCharts(props: ViewAnalyticsChartsProps) {
       shopping: { label: "Shopping", color: "var(--chart-3)" },
       entreteniment: { label: "Entertainment", color: "var(--chart-4)" },
       social: { label: "Social", color: "var(--chart-5)" },
+      study: { label: "Study", color: "var(--chart-6)" },
     } satisfies ChartConfig;
   
     const chartData = [
@@ -38,11 +39,12 @@ export function ViewAnalyticsCharts(props: ViewAnalyticsChartsProps) {
       { name: "Shopping", value: shopping, fill: chartConfig.shopping.color },
       { name: "Entertainment", value: entreteniment, fill: chartConfig.entreteniment.color },
       { name: "Social", value: social, fill: chartConfig.social.color },
+      { name: "Study", value: study, fill: chartConfig.study.color },
     ];
   
     const totalPasswords = React.useMemo(() => {
-      return creditCards + work + shopping + entreteniment + social;
-    }, [creditCards, work, shopping, entreteniment, social]);
+      return creditCards + work + shopping + entreteniment + social + study;
+    }, [creditCards, work, shopping, entreteniment, social, study]);
   
     return (
       <Card className="flex flex-col">
