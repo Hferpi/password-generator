@@ -6,8 +6,8 @@ export function countWhereSitesPasswordsAre(elements: Element[]) {
     const shopping = elements.filter((element) => element.directory === "Shopping").length || 0
     const entreteniment = elements.filter((element) => element.directory === "Entreteniment").length || 0
     const social = elements.filter((element) => element.directory === "Social").length || 0
-    
+    const study = elements.filter((element) => element.directory === "Study").length || 0
 
    
-return {creditCards, work, shopping, entreteniment, social};
+return {creditCards, work, shopping, entreteniment, social, study};
 }

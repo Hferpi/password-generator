@@ -29,13 +29,13 @@ export default async function AnalyticsPage() {
         redirect('/')
     }
     const {unique, repeated} =countPasswords(user.elements)
-    const {creditCards, work, shopping, entreteniment, social} =countWhereSitesPasswordsAre(user.elements)
+    const {creditCards, work, shopping, entreteniment, social, study} =countWhereSitesPasswordsAre(user.elements)
     return (
         <div>
             <h1 className="text-xl md:text-3xl font-semibold">Analytics</h1>
             <div className="grid md:grid-cols-2 gap-5 mt-6 mb-4">
                 <RepeatedPasswordsChart unique={unique} repeated={repeated}/>
-                <ViewAnalyticsCharts creditCards={creditCards} work={work} shopping={shopping} entreteniment={entreteniment} social={social}/>
+                <ViewAnalyticsCharts creditCards={creditCards} work={work} shopping={shopping} entreteniment={entreteniment} social={social} study={study}/>
             </div>
         </div>
     )
