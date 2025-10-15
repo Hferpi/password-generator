@@ -11,10 +11,10 @@ import { SingleItem } from "../SingleItem"
 import { dataSidebarElements, dataSidebarConfiguration } from "./SidebarRoutes.data"
 import { signOut } from "next-auth/react"
 
-export function SidebarRoutes() {
+export function SidebarRoutes({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div>
-      <SingleItem href="/" icon={House} label="Homepage" />
+      <SingleItem href="/" icon={House} label="Homepage" onClick={onNavigate} />
 
       {dataSidebarElements.map(({ title, icon: Icon, children }) => (
         <Accordion type="single" collapsible key={title} className="w-full px-2">
@@ -32,6 +32,7 @@ export function SidebarRoutes() {
               {children.map(({ item, href, icon: Icon }) => (
                 <div key={item}>
                   <Link href={href}
+                    onClick={onNavigate}
                     className="px-6 py-2 flex gap-2 items-center hover:bg-blue-100/20 duration-300 transition-all rounded-md">
 
                     <Icon size={20} />
@@ -44,7 +45,7 @@ export function SidebarRoutes() {
         </Accordion>
       ))}
 
-      <SingleItem href="/generator" label="Generator" icon={RectangleEllipsis} />
+      <SingleItem href="/generator" label="Generator" icon={RectangleEllipsis} onClick={onNavigate} />
 
       {dataSidebarConfiguration.map(({ title, icon: Icon, children }) => (
         <Accordion type="single" collapsible key={title} className="w-full px-2">
@@ -61,7 +62,7 @@ export function SidebarRoutes() {
             <AccordionContent>
               {children.map(({ item, href, icon: Icon, premium }) => (
                 <div key={item} className="flex items-center justify-between  mt-2 hover:bg-blue-100/20 duration-300 transition-all rounded-md pr-1">
-                  <Link href={href} className="px-6 py-2 flex gap2 items-center">
+                  <Link href={href} onClick={onNavigate} className="px-6 py-2 flex gap2 items-center">
                     <Icon size={20} />
                     {item}
                   </Link>
@@ -74,8 +75,8 @@ export function SidebarRoutes() {
 
       ))}
 
-      <SingleItem href="/analytics" label="Analytics" icon={BarChart} />
-      <SingleItem onclick={()=>signOut()} label="Logout" href="#" icon={DoorClosed}/>
+      <SingleItem href="/analytics" label="Analytics" icon={BarChart} onClick={onNavigate} />
+      <SingleItem onClick={() => { onNavigate && onNavigate(); signOut() }} label="Logout" href="#" icon={DoorClosed}/>
 
     </div>
       )

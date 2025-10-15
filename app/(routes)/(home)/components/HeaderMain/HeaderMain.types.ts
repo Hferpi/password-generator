@@ -1,11 +1,11 @@
-type TypeElement = "" |"password" | "folder"
+// type TypeElement = "" |"password" | "folder"
 
-export type DataHeaderMainItemProps =  {
-    icon: React.ComponentType<{ className?: string }>
-    typeElement: TypeElement
-    text: string
-}
+// export type DataHeaderMainItemProps =  {
+//     icon: React.ComponentType<{ className?: string }>
+//     typeElement: TypeElement
+//     text: string
+// }
 
-export type HeaderMainProps = {
-    userId: string
-}
+// export type HeaderMainProps = {
+//     userId: string
+// }
