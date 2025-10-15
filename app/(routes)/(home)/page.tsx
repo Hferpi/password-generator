@@ -4,6 +4,8 @@ import { HeaderMain } from "./components/HeaderMain";
 import { getServerSession } from "next-auth";
 import { db } from "@/lib/db";
 import {  TableData } from "./components/TableData";
+import { decrypt } from "@/lib/encrytpt";
+
 
 export default async function Home() {
   const session = await getServerSession()
@@ -17,13 +19,21 @@ export default async function Home() {
       email: session.user.email
     },
     include: {
+
       elements: {
         orderBy: {
           createdAt: "desc"
         }
+
       }
     }
   })
+
+  user?.elements.forEach((element) => {
+    element.password = decrypt(element.password)
+  })
+
+
   if (!user || !user.elements) {
     return redirect("/")
   }

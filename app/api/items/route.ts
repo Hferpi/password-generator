@@ -1,5 +1,7 @@
 import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
+import { encrypt } from "@/lib/encrytpt";
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,7 +28,7 @@ export async function POST(request: NextRequest) {
         isFavourite,
         urlWebsite,
         username,
-        password,
+        password: encrypt(password),
         notes,
         directory,
         userId,
