@@ -41,6 +41,13 @@ export const columns: ColumnDef<ColumProps>[] = [
                 toast.success(`${name} copied to clipboard`)
             };
 
+            const goToWebSite = () => {
+                if (!row.original.urlWebsite) {
+                    return
+                }
+                window.open(row.original.urlWebsite, "_blank")
+            }
+
             return (
                 <div className="flex gap-2 justify-center items-center">
                     {password && (
@@ -63,6 +70,7 @@ export const columns: ColumnDef<ColumProps>[] = [
                         <DropdownMenuContent align="end">
                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
                             <DropdownMenuItem onClick={onEditElement}>Edit</DropdownMenuItem>
+                            <DropdownMenuItem onClick={goToWebSite}>Go to website</DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
