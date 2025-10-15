@@ -4,5 +4,5 @@ export type SingleItemProps = {
     label: string;
     href: string;
     icon: LucideIcon;
-    onclick?: () => void;
+    onClick?: () => void;
 }
