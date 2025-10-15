@@ -30,8 +30,13 @@ export default async function Home() {
   })
 
   user?.elements.forEach((element) => {
+  if (element.password) {
     element.password = decrypt(element.password)
-  })
+  } else {
+    element.password = "" 
+  }
+})
+
 
 
   if (!user || !user.elements) {
