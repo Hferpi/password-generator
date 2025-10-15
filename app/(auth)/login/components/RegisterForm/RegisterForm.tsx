@@ -23,7 +23,7 @@ const formSchema = z.object({
     password: z.string().min(2).max(50),
 })
 
-export function RegisterForm() {
+export function RegisterForm({ onSuccess }: { onSuccess?: () => void }) {
     const [showPassword, setShowPassword] = useState(false)
     const router = useRouter()
     const form = useForm<z.infer<typeof formSchema>>({
@@ -49,6 +49,8 @@ export function RegisterForm() {
         if (response?.ok) {
             router.push("/")
             toast("Registro realizado con éxito")
+
+             if (onSuccess) onSuccess()
         } else {
             toast("Error al registrar")
         }
