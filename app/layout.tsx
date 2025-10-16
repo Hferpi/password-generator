@@ -14,9 +14,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Password Manager",
   description: "App to save and manage your passwords",
-  manifest: "/public/manifest.json",
+  manifest: "/manifest.json",
   icons :{
-    icon: "/public/images/icon_app.png"
+    icon: "/images/icon_app.png"
   },
   keywords: ["password manager", "security", "encrypted passwords", "productivity"],
   creator: "Hferpi",
