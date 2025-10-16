@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { encrypt } from "@/lib/encrytpt";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function PATCH(
@@ -15,7 +16,7 @@ export async function PATCH(
 
     const element = await db.element.update({
       where: { id: itemId },
-      data: { ...values },
+      data: { ...values, password: encrypt(values.password) },
     });
 
     return NextResponse.json(element);
