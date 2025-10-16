@@ -69,7 +69,7 @@ export function FormEditElement(props: FormEditElementProps) {
 
 
     return (
-        <Form {...form}>
+        <Form {...form} >
             <form onSubmit={form.handleSubmit(onSubmit)} className="md:grid-cols-2 gap-y-2 gap-x-4 grid">
                 <FormField
                     control={form.control}
@@ -219,13 +219,6 @@ export function FormEditElement(props: FormEditElementProps) {
                         </FormItem>
                     )}
                 />
-                <div >
-                    <div className="text-slate-400 flex items-center justify-between text-sm">
-                        Autenticación TOTP
-                        <p className="px-3 bg-green-700 text-white rounded-lg text-xs mr-5">Premium</p>
-                    </div>
-                    <Input disabled placeholder="Autenticación TOTP" />
-                </div>
                 <FormField
                     control={form.control}
                     name="notes"

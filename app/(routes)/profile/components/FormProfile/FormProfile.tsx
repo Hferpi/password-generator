@@ -126,7 +126,7 @@ export function FormProfile(props: FormProfileProps) {
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel>Tag</FormLabel>
                             <FormControl>
                                 <Input placeholder="John Doe" {...field} />
                             </FormControl>
