@@ -14,7 +14,36 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Password Manager",
   description: "App to save and manage your passwords",
-  manifest: "/manifest.json"
+  manifest: "/public/manifest.json",
+  icons :{
+    icon: "/public/images/icon_app.png"
+  },
+  keywords: ["password manager", "security", "encrypted passwords", "productivity"],
+  creator: "Hferpi",
+openGraph: {
+  title: "Password Manager",
+  description: "Securely save and manage your passwords",
+  url: "https://passvaultsafe.vercel.app",
+  siteName: "PassVaultSafe",
+  images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 768,
+    },
+  ],
+  locale: "es_ES",
+  type: "website",
+},
+
+twitter: {
+  card: "summary_large_image",
+  title: "Password Manager",
+  description: "Securely save and manage your passwords",
+  images: ["/og-image.png"],
+  creator: "@Hferpi",
+},
+
 };
 
 export default function RootLayout({
