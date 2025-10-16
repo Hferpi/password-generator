@@ -30,7 +30,7 @@ export default async function LoginsElementsPage() {
     }
 
     return <div>
-        <h1 className="text-xl md:text-3xl font-semibold">List of logins elements</h1>
+        <h1 className="text-xl md:text-3xl font-semibold">List of logins elements 📝</h1>
         <DataTableItems elements={user.elements} />
     </div>;
 

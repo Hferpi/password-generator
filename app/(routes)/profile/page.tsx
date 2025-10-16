@@ -19,7 +19,7 @@ export default async function Profile() {
 
   return (
     <div>
-      <h1 className="text-xl md:text-3xl font-semibold">Account Details</h1>
+      <h1 className="text-xl md:text-3xl font-semibold">Account Details 👤</h1>
       <FormProfile user={userDb} />
     </div>
   );
