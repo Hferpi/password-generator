@@ -10,7 +10,7 @@ export function TabsForms() {
  const [activeTab, setActiveTab] = useState<"signin" | "signup">("signin")
 
     return (
-        <Tabs  value={activeTab} onValueChange={(value) => setActiveTab(value as "signin" | "signup")} className="w-[350px]">
+        <Tabs  value={activeTab} onValueChange={(value) => setActiveTab(value as "signin" | "signup")} className="w-[350px] md:w-[400px]">
             <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="signin" className="cursor-pointer hover:underline">Sign In</TabsTrigger>
                 <TabsTrigger value="signup" className="cursor-pointer hover:underline">Sign Up</TabsTrigger>
