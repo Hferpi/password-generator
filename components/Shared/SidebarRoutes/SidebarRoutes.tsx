@@ -66,7 +66,7 @@ export function SidebarRoutes({ onNavigate }: { onNavigate?: () => void }) {
                     <Icon size={20} />
                     {item}
                   </Link>
-                  {premium && <span className="text-xs gap-2 flex px-2 py-1 bg-blue-400 rounded-md">Premium</span>}
+                  {premium && <span className="text-xs gap-2 flex px-2 py-1 bg-blue-400 rounded-md cursor-not-allowed">Dissable</span>}
                 </div>
               ))}
             </AccordionContent>

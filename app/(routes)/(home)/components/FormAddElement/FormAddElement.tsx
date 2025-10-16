@@ -229,13 +229,6 @@ export function FormAddElement(props: FormAddElementProps) {
                             </FormItem>
                         )}
                     />
-                    <div >
-                        <div className="text-slate-400 flex items-center justify-between text-sm">
-                            Autenticación TOTP
-                            <p className="px-3 bg-green-700 text-white rounded-lg text-xs mr-5">Premium</p>
-                        </div>
-                        <Input disabled placeholder="Autenticación TOTP" />
-                    </div>
                     <FormField
                         control={form.control}
                         name="notes"
