@@ -7,7 +7,7 @@ export const formSchema = z.object({
     name: z.string().min(2).max(50),
     directory: z.string().min(2).max(50),
     password: z.string().min(2).max(150),
-    urlWebsite: z.string().min(2).max(50),
+    urlWebsite: z.string().min(2).max(300),
     notes: z.string(),
     userId: z.string(),
     username: z.string().min(2).max(50),
